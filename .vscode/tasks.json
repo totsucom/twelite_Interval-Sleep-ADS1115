@@ -1,0 +1,52 @@
+// .vscode/tasks.json
+{
+    "version": "2.0.0",
+    "tasks": [
+	 {
+            "label": "Build Interval-Sleep-ADS1115,Main (BLUE)",
+            "type": "shell",
+            "windows": {
+                "command": "make",
+                "args": [ "TWELITE=BLUE",  "clean", "all" ],
+                "options": { "env": { "PATH": "${workspaceRoot}\\..\\..\\Tools\\MinGW\\msys\\1.0\\bin" } }
+            },
+            "linux": {
+                "command": "sh",
+                "args": [
+                    "${workspaceRoot}/../../Tools/VSCode/bin/cleanbuild.sh",
+                    "TWELITE=BLUE",  "" ]
+            },
+            "osx": {
+                "command": "sh",
+                "args": [
+                    "${workspaceRoot}/../../Tools/VSCode/bin/cleanbuild.sh",
+                    "TWELITE=BLUE",  "" ]
+            },
+            "problemMatcher": { "base": "$gcc", "fileLocation": [ "absolute" ] },
+            "options": { "cwd": "${workspaceRoot}/Main/Build" }
+        }
+	, {
+            "label": "Build Interval-Sleep-ADS1115,Main (RED)",
+            "type": "shell",
+            "windows": {
+                "command": "make",
+                "args": [ "TWELITE=RED",  "clean", "all" ],
+                "options": { "env": { "PATH": "${workspaceRoot}\\..\\..\\Tools\\MinGW\\msys\\1.0\\bin" } }
+            },
+            "linux": {
+                "command": "sh",
+                "args": [
+                    "${workspaceRoot}/../../Tools/VSCode/bin/cleanbuild.sh",
+                    "TWELITE=RED",  "" ]
+            },
+            "osx": {
+                "command": "sh",
+                "args": [
+                    "${workspaceRoot}/../../Tools/VSCode/bin/cleanbuild.sh",
+                    "TWELITE=RED",  "" ]
+            },
+            "problemMatcher": { "base": "$gcc", "fileLocation": [ "absolute" ] },
+            "options": { "cwd": "${workspaceRoot}/Main/Build" }
+        }
+    ]
+}

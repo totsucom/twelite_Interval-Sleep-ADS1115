@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722.244842501/PATH/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722.244842501/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722.244842501/PATH/value=${workspace_loc}/../Tools/ba-elf-ba2/bin${PathDelimiter}${workspace_loc}/../Tools/cygwin/bin${PathDelimiter}${workspace_loc}/../bin
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722.244842501/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722.244842501/appendContributed=false
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722/PATH/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722/PATH/value=${workspace_loc}/../Tools/ba-elf-ba2/bin${PathDelimiter}${workspace_loc}/../Tools/cygwin/bin${PathDelimiter}${workspace_loc}/../bin
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.1547978722/appendContributed=false
