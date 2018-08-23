@@ -255,13 +255,15 @@ static void vProcessEvCore(tsEvent *pEv, teEvent eEvent, uint32 u32evarg)
 
             // 測定モードへ移行
             ToCoNet_Event_SetState(pEv, E_STATE_RUNNING);
-            ToCoNet_Event_Process(E_ORDER_KICK, TRUE, vProcessEvCore);
+
+            //この関数はメッセージキューを使わずにいきなり呼び出すので、vProcessEvCore関数内で呼んだらだめらしい
+            //ToCoNet_Event_Process(E_ORDER_KICK, TRUE, vProcessEvCore);
         }
         break;
 
     // 稼働状態
     case E_STATE_RUNNING:
-        if (eEvent == E_ORDER_KICK) {
+        if (eEvent == E_EVENT_NEW_STATE) {// ↑上記理由より E_ORDER_KICK は使用やめ
 
             // Pt100部分に電源供給
             vPortSetHi(PWR_PIN);
@@ -370,8 +372,8 @@ static void vProcessEvCore(tsEvent *pEv, teEvent eEvent, uint32 u32evarg)
 
     // 送信完了待ち状態
     case E_STATE_APP_WAIT_TX:
-        if (eEvent == E_ORDER_KICK) {
-            // 変換終了でスリープへ移行
+        if (eEvent == E_ORDER_KICK) { // このフラグはcbToCoNet_vTxEvent関数よりONしている
+            // 送信終了でスリープへ移行
             ToCoNet_Event_SetState(pEv, E_STATE_APP_SLEEP);
         }
         break;
